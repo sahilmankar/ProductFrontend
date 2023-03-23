@@ -20,6 +20,8 @@ export class InsertproductComponent {
     categoryId: 0
   };
   status: boolean | undefined;
+  
+
   constructor(private svc: ProductHubServiceService) { }
 
   reciveProduct($event: any) {

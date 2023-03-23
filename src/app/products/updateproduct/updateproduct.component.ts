@@ -11,11 +11,14 @@ export class UpdateproductComponent {
 
 
   product: Product|any;
+  status: boolean | undefined;
+
  
   constructor(private svc: ProductHubServiceService) { }
 
   updateProduct() {
     this.svc.updateProduct(this.product).subscribe((response)=>{
+      this.status = response;
       console.log(response);
     })
 

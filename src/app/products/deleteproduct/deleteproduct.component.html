@@ -1,5 +1,17 @@
-<h2>Delete Product </h2>
-<app-getbyid (sendProductId)="reciveProductId($event)"></app-getbyid>
-<div *ngIf="productId ">
-<button (click)="deleteProduct()">Delete</button>
+<h2>Delete Product</h2>
+
+<app-getbyid (sendProduct)="reciveProductId($event)"></app-getbyid>
+<div *ngIf="product">
+  <app-details [product]="product"></app-details>
+</div>
+<div *ngIf="product && productId != 0">
+  <button (click)="deleteProduct()" (click)="status = false">Delete</button>
+</div>
+
+<div *ngIf="status">
+  <p>record deleted sucessfully</p>
+</div>
+
+<div *ngIf="status == false">
+  <p>Error While deleting data</p>
 </div>

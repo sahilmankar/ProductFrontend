@@ -9,10 +9,14 @@ import { ProductHubServiceService } from '../product-hub-service.service';
 })
 export class ListComponent implements OnInit {
 
-  products: Product[]|undefined;
+  products: Product[] | undefined;
   constructor(private svc: ProductHubServiceService) { }
+  
   ngOnInit(): void {
-
+    this.svc.getProducts().subscribe((response) => {
+      this.products = response;
+      console.log(this.products);
+    })
   }
 
   getAll(): void {

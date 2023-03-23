@@ -1,0 +1,5 @@
+<p></p>
+<app-getbyid (sendProduct)="reciveProduct($event)"></app-getbyid>
+<div *ngIf="product">
+  <app-details [product]="product"></app-details>
+</div>

@@ -1,5 +1,19 @@
 <h2>Update page</h2>
 
 <app-getbyid (sendProduct)="reciveProduct($event)"></app-getbyid>
-<app-productform [product]="product"  ></app-productform>
-<button (click)="updateProduct()">Update</button>
+<div *ngIf="product && product.productId!=0 ">
+<app-productform [product]="product"></app-productform>
+  <button (click)="updateProduct()" (click)="status = false">Update</button>
+</div>
+
+<div *ngIf=" product && product.productId==0 ">
+    <p>Product not Found</p>
+</div>
+
+<div *ngIf="status">
+  <p>record updated sucessfully</p>
+</div>
+
+<div *ngIf="status == false">
+  <p>Error While updating data</p>
+</div>

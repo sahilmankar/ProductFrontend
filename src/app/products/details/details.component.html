@@ -1,4 +1,4 @@
-<h2>Product Details</h2>
+<h3>Product Details</h3>
 
 <div *ngIf="product && product.productId!=0 ">
   <p><label ><b>ProducId :</b></label>{{ product.productId }}</p>
@@ -10,9 +10,8 @@
   <p><label ><b>Image :</b></label>{{ product.imageUrl }}</p>
   <app-counter
     [counter]="product.unitPrice"
-    (update)="onUpdate($event)"
-  ></app-counter>
-  <hr />
+    (update)="onUpdate($event)"></app-counter>
+  <hr/>
 </div>
 <div *ngIf=" product && product.productId==0 ">
   <p>Product not Found</p>

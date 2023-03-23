@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from '../product';
 import { ProductHubServiceService } from '../product-hub-service.service';
 
 @Component({
@@ -9,9 +10,13 @@ import { ProductHubServiceService } from '../product-hub-service.service';
 export class DeleteproductComponent {
 
   productId: any;
+  product:Product|undefined;
+  status: boolean | undefined;
+
   constructor(private svc: ProductHubServiceService) { }
 
   reciveProductId($event: any) {
+    this.product=$event.product;
     this.productId = $event.product.productId;
     console.log(this.productId);
 
@@ -19,6 +24,7 @@ export class DeleteproductComponent {
   deleteProduct() {
     console.log(this.productId);
     this.svc.deleteProduct(this.productId).subscribe((response) => {
+      this.status = response;
       console.log(response);
     })
   }

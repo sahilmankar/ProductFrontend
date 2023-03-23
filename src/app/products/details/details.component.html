@@ -1,16 +1,19 @@
 <h2>Product Details</h2>
 
-<div *ngIf="product">
-  <p>{{ product.productId }}</p>
-  <p>{{ product.productTitle }}</p>
-  <p>{{ product.description }}</p>
-  <p>{{ product.stockAvailable }}</p>
-  <p>{{ product.unitPrice }}</p>
-  <p>{{ product.categoryId }}</p>
-  <p>{{ product.imageUrl }}</p>
+<div *ngIf="product && product.productId!=0 ">
+  <p><label ><b>ProducId :</b></label>{{ product.productId }}</p>
+  <p><label ><b>Title :</b></label>{{ product.productTitle }}</p>
+  <p><label ><b>Description :</b></label>{{ product.description }}</p>
+  <p><label ><b>StockAvailable :</b></label>{{ product.stockAvailable }}</p>
+  <p><label ><b>UnitPrice :</b></label>{{ product.unitPrice}}</p>
+  <p><label ><b>CategoryId :</b></label>{{ product.categoryId }}</p>
+  <p><label ><b>Image :</b></label>{{ product.imageUrl }}</p>
   <app-counter
     [counter]="product.unitPrice"
     (update)="onUpdate($event)"
   ></app-counter>
   <hr />
 </div>
+<div *ngIf=" product && product.productId==0 ">
+  <p>Product not Found</p>
+  </div>

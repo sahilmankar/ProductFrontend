@@ -1,0 +1,7 @@
+
+<h3>Insert Product</h3>
+<app-productform [product]="product" ></app-productform>
+<button (click)="insertProduct()" (click)="status=false"> Insert</button>
+<div *ngIf="status">
+    record inserted
+</div>

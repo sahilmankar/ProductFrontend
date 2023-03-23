@@ -1,0 +1,10 @@
+
+<div *ngIf="product" >
+    <label ><b>Title :</b></label>  <input type="text" [(ngModel)]="product.productTitle">  <br>
+    <label ><b>Description :</b></label>  <input type="text" [(ngModel)]="product.description"> <br>
+    <label ><b>StockAvailable :</b></label>  <input type="number" [(ngModel)]="product.stockAvailable"> <br>
+    <label ><b>UnitPrice :</b></label>  <input type="number" [(ngModel)]="product.unitPrice">   <br>
+    <label ><b>CategoryId :</b></label>  <input type="number" [(ngModel)]="product.categoryId"> <br>
+    <label ><b>Image :</b></label>  <input type="text" [(ngModel)]="product.imageUrl">  <br>
+</div>
+<button (click)="sendProduct()">Proceed</button>

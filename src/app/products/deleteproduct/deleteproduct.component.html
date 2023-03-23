@@ -1,0 +1,5 @@
+<h2>Delete Product </h2>
+<app-getbyid (sendProductId)="reciveProductId($event)"></app-getbyid>
+<div *ngIf="productId ">
+<button (click)="deleteProduct()">Delete</button>
+</div>

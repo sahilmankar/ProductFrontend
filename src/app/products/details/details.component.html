@@ -1,0 +1,16 @@
+<h2>Product Details</h2>
+
+<div *ngIf="product">
+  <p>{{ product.productId }}</p>
+  <p>{{ product.productTitle }}</p>
+  <p>{{ product.description }}</p>
+  <p>{{ product.stockAvailable }}</p>
+  <p>{{ product.unitPrice }}</p>
+  <p>{{ product.categoryId }}</p>
+  <p>{{ product.imageUrl }}</p>
+  <app-counter
+    [counter]="product.unitPrice"
+    (update)="onUpdate($event)"
+  ></app-counter>
+  <hr />
+</div>

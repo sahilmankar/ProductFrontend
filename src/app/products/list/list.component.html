@@ -1,0 +1,6 @@
+<div><button (click)="getAll()">GetProducts</button></div>
+
+<div *ngFor="let product of products">
+
+   <app-details [product]="product" ></app-details>
+</div>  

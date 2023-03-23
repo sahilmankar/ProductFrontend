@@ -3,8 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { CatalogModule } from './catalog/catalog.module';
-import { GitModule } from './git/git.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -13,9 +12,7 @@ import { GitModule } from './git/git.module';
   imports: [
     BrowserModule,
     FormsModule,
-    CatalogModule,
-    GitModule
-
+    ProductsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

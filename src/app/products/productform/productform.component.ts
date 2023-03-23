@@ -10,14 +10,7 @@ export class ProductformComponent {
 
 
   @Input() product :Product|undefined;
-  @Output() formproduct=new EventEmitter();
 
-
-  sendProduct() {
-    this.formproduct.emit({product:this.product})
-    }
-   
- 
 }
 
 

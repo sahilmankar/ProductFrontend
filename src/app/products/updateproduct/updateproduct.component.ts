@@ -10,19 +10,15 @@ import { ProductHubServiceService } from '../product-hub-service.service';
 export class UpdateproductComponent {
 
 
-  product: Product |undefined;
-  newproduct: any;
+  product: Product|any;
+ 
   constructor(private svc: ProductHubServiceService) { }
 
   updateProduct() {
-    this.svc.updateProduct(this.newproduct).subscribe((response)=>{
+    this.svc.updateProduct(this.product).subscribe((response)=>{
       console.log(response);
     })
 
-  }
-  // it will recive product data from productfrom
-  reciveProductform($event: any) {
-    this.newproduct = $event.product;
   }
 
   // from getbyid

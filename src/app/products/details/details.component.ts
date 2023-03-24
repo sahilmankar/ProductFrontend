@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../product';
 
 @Component({
@@ -6,13 +6,17 @@ import { Product } from '../product';
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css']
 })
-export class DetailsComponent {
-
+export class DetailsComponent  {
   @Input() product: Product | undefined;
-
+  
+  
+    path="assets/";
+ 
   onUpdate(e: any) {
-    if (this.product != undefined)
+    if (this.product != undefined){
       this.product.unitPrice = e.counter;
+      // this.product.imageUrl="assets/"+this.product.imageUrl;
+    }
   }
 
 }

@@ -1,13 +1,15 @@
 <h3>Product Details</h3>
 
 <div *ngIf="product && product.productId!=0 ">
+  <img [src]=" path+product.imageUrl" height="100" width="100">
   <p><label ><b>ProducId :</b></label>{{ product.productId }}</p>
   <p><label ><b>Title :</b></label>{{ product.productTitle }}</p>
   <p><label ><b>Description :</b></label>{{ product.description }}</p>
   <p><label ><b>StockAvailable :</b></label>{{ product.stockAvailable }}</p>
   <p><label ><b>UnitPrice :</b></label>{{ product.unitPrice}}</p>
   <p><label ><b>CategoryId :</b></label>{{ product.categoryId }}</p>
-  <p><label ><b>Image :</b></label>{{ product.imageUrl }}</p>
+
+
   <app-counter
     [counter]="product.unitPrice"
     (update)="onUpdate($event)"></app-counter>

@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BarchartComponent } from './barchart/barchart.component';
 import { NgChartsModule } from 'ng2-charts';
+import { LoginComponent } from './login/login.component';
 
 
 export const routes:Routes =[
@@ -24,6 +25,7 @@ export const routes:Routes =[
   {path:'update',component:UpdateproductComponent},
   {path:'delete',component:DeleteproductComponent},
   {path:'barchart',component:BarchartComponent},
+  {path:'login',component:LoginComponent},
   
 ]
 @NgModule({
@@ -38,7 +40,8 @@ export const routes:Routes =[
     ProductformComponent,
     SearchComponent,
     NavbarComponent,
-    BarchartComponent
+    BarchartComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

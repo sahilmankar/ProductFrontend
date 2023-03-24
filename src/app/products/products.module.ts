@@ -13,6 +13,8 @@ import { ProductformComponent } from './productform/productform.component';
 import { SearchComponent } from './search/search.component'
 import { RouterModule, Routes } from '@angular/router';
 import { NavbarComponent } from './navbar/navbar.component';
+import { BarchartComponent } from './barchart/barchart.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 export const routes:Routes =[
@@ -20,7 +22,8 @@ export const routes:Routes =[
   {path:'search',component:SearchComponent},
   {path:'insert',component:InsertproductComponent},
   {path:'update',component:UpdateproductComponent},
-  {path:'delete',component:DeleteproductComponent}
+  {path:'delete',component:DeleteproductComponent},
+  {path:'barchart',component:BarchartComponent},
   
 ]
 @NgModule({
@@ -34,13 +37,15 @@ export const routes:Routes =[
     UpdateproductComponent,
     ProductformComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    BarchartComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgChartsModule
   ],
   exports:[
     ListComponent,
